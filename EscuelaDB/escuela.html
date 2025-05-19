@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="escuela.js"></script>
+</head>
+<body>
+
+    <h1>Escuela</h1>
+    <h2>Inserciones</h2>
+    <input type="text" id="nombre_Departamento" placeholder="Nombre del nuevo departamento"><br>
+    <textarea id="descripcion" placeholder="descripcion del nuevo departamento"></textarea><br>
+    <button id="crear_departamento">Crear</button><br><br>
+
+    <label for="nombre_miembro">Nombre:</label>
+    <input type="text" id="nombre_miembro" placeholder="Nombre"><br>
+
+    <label for="apellido_miembro">Apellido:</label>
+    <input type="text" id="apellido_miembro" placeholder="Apellido"><br>
+
+    <label for="email_miembro">Email:</label>
+    <input type="email" id="email_miembro" placeholder="Email"><br>
+
+    <label for="telefono_miembro">Teléfono:</label>
+    <input type="tel" id="telefono_miembro" placeholder="Teléfono"><br>
+
+    <label for="departamentoID_miembro">Departamento ID:</label>
+    <input type="text" id="departamentoID_miembro" placeholder="DepartamentoID"><br>
+
+    <button id="add_miembro">Añadir</button><br><br>
+
+
+    <h2>Listados</h2>
+    <select id="departamento">
+        <option value="0">Selecciona un departamento</option>
+    </select>
+
+    <h5>Miembros del departamento de <span id="departamento-name"> </span>:</h5>
+    <ul id="miembros">
+
+    </ul>
+</body>
+</html>
