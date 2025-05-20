@@ -1,6 +1,6 @@
-const dptSelect = document.querySelector("select")
-const dptSpan = document.querySelector("span")
-const miembrosUl = document.querySelector("ul")
+const dptSelect = document.getElementById("departamento")
+const dptSpan = document.getElementById("departamento-name")
+const miembrosUl = document.getElementById("miembros")
 
 // Crear dpto
 const dptoNameInput = document.getElementById('nombre_Departamento')
@@ -23,6 +23,13 @@ fetch('getDpts.php').then(response => response.json()).then(data => {
         newOption.value = departamento.DepartamentoID
         newOption.textContent = departamento.NombreDepartamento
         dptSelect.appendChild(newOption)
+    })
+
+    data.forEach(departamento => {
+        let newOption = document.createElement('option')
+        newOption.value = departamento.DepartamentoID
+        newOption.textContent = departamento.NombreDepartamento
+        departamentoID_miembro.appendChild(newOption)
     })
 })
 
