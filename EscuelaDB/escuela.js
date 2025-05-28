@@ -15,6 +15,11 @@ const telefono_miembro = document.getElementById('telefono_miembro')
 const departamentoID_miembro = document.getElementById('departamentoID_miembro')
 const add_miembro = document.getElementById('add_miembro')
 
+// Toast
+const toastTrigger = document.getElementById('crear_departamento')
+const toastLiveExample = document.getElementById('liveToast')
+const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample, {delay: 7000})
+const toast_body = document.getElementById('toast-body')
 
 fetch('getDpts.php').then(response => response.json()).then(data => {
     
@@ -50,10 +55,14 @@ crearDepartamentoBtn.addEventListener('click', function(){
         fetch('insertDpt.php', options).then(response => response.json()).then(data => {
             if(data.error){
                 console.error('Error al crear el departamento', data.error)
+                toast_body.innerHTML = "Error en la base de datos"
+                toastBootstrap.show()
             }else{
                 console.log('Departamento creado con ID', data.mensaje)
             }
         })
+    }else{
+        toastBootstrap.show()
     }
 })
 
